@@ -1,0 +1,37 @@
+*파이어베이스에서
+회원가입/로그인/소셜 로그인/로그아웃/회원탈퇴/마이프로필 정보
+
+[회원가입] - [이메일 인증] - [로그인] - [로그아웃] - [비밀번호 설정] - [회원탈퇴}
+1) 파이어베이스 -> 프로젝트 생성
+	        -> Build -> Authentication(인증)
+		         / 로그인 방법(아이디/비번/구글로그인/깃허브로그인)
+		         / 설정 -> 승인도메인 127.0.0.1 도메인 추가
+2) 생성할 페이지
+firebase 초기화
+firebase 폴더를 생성 -> firebase_init 초기화 페이지
+	                 -> 프로젝트 인증키 및 환경설정
+	                 -> firebase 사용자 정보 인증
+                                   -> getAuth 객체를 가져와야하므로 getAuth 정보를 다루는 파일 생성
+
+**회원가입에서 필요로 하는 함수**
+createUserWithEmailAndPassword,
+updateProfile, //프로필표시 이름=닉네임
+sendEmailVerification, //이메일 인증 보내기
+
+**로그인 함수**
+signInWithEmailAndPassword, //로그인
+GoogleAuthProvider,
+GithubAuthProvider,
+signInWithPopup, //팝업을 이용한 소셜 로그인
+
+**비밀번호 재설정**
+sendPasswordResetEmail, //비밀번호 재설정 이메일 보내기
+
+**로그아웃**
+signOut, //로그아웃 처리
+
+**회원탈퇴**
+deleteUser, //현재 로그인된 사용자 계정 삭제
+reauthenticateWithCredential, //이메일 비번으로 재인증 처리
+reauthenticateWithPopup, //소셜 로그인 계정 재인증
+EmailAuthProvider //이메일/비번 인증용 Provider 생성
